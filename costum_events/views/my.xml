@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <div class="row mt16 o_settings_container" name="event_type_attendees">
+        <div class="col-12 o_setting_box" name="event_type_attendees_tickets">
+            <div class="o_setting_left_pane">
+                <field name="use_ticket"/>
+            </div>
+            <div class="o_setting_right_pane">
+                <label for="use_ticket"/>
+                <div class="row mt16" attrs="{'invisible': [('use_ticket', '=', False)]}">
+                    <div class="col">
+                        <field name="event_type_ticket_ids" class="w-100" context="{                                                     'tree_view_ref': 'event.event_type_ticket_view_tree_from_type',                                                     'form_view_ref': 'event.event_type_ticket_view_form_from_type'                                                 }"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <data>
+        <template id="assets_backend" name="event assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/scss" href="/event/static/src/scss/event.scss"/>
+            </xpath>
+        </template> 
+
+        <template id="assets_common" name="Event Assets Common" inherit_id="web.assets_common">
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/event/static/src/js/tours/event_tour.js"></script>
+            </xpath>
+        </template>
+    </data>
+    <template id="event_default_descripton" name="Event default description">
+        <section class="s_text_block">
+            <h5>Join us for this 24 hours Event</h5>
+            <p>Every year we invite our community, partners and end-users to come and meet us! It's the ideal event to get together and present new features, roadmap of future versions, achievements of the software, workshops, training sessions, etc....
+            This event is also an opportunity to showcase our partners' case studies, methodology or developments. Be there and see directly from the source the features of the new version!</p>
+        </section>
+    </template> 
+    <record model="ir.actions.act_window" id="event_list1">
+        <field name="name">Event</field>
+        <field name="res_model">event.type</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+  
+  <menuitem id="main_events1" name = 'My Events1'/>
+  <menuitem id="part_events1" parent='main_events1' name = 'my events1'/>
+  <menuitem id="see_events1" parent='part_events1' name = 'view events1' action='event_list1'/>
+   -->
+</odoo>

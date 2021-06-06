@@ -1,0 +1,79 @@
+<odoo>
+
+    <data>
+      
+<!-- organizer tree view -->
+<record id="model_name_view_tree" model="ir.ui.view">
+    <field name="name">organizer.view.tree</field>
+    <field name="model">organizer</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="firstname"/>
+            <field name="lastname"/>
+            <field name="phone" /> 
+            <field name="mail"/> 
+            <field name="type1" widget="radio"/>
+            <!-- <field name="field1" attrs="{'invisible': [('t','=', 'val1'))]}"/>
+            <field name="field2" attrs="{'invisible': [('t','=', 'val2'))]}"/> -->
+            <field name="orgnizer_ids"/> 
+        </tree>
+    </field>
+</record>
+<!-- model.name form view -->
+<record id="model_name_view_form" model="ir.ui.view">
+    <field name="name">organizer.name.view.form</field>
+    <field name="model">organizer</field>
+    <field name="arch" type="xml">
+        <form string="organizer.form">
+            <sheet>
+                <group>
+                    <field name="firstname"/>
+                    <field name="lastname"/>
+                    <field name="phone"/>
+                    <field name="mail"/>
+                   
+
+                    <field name="orgnizer_ids"/>
+                    
+                </group>
+                <group >
+                    <field name="type1" widget="radio"/>
+                    <!-- <field name="company_name" attrs="{'invisible':[('type1','=','val1')]}"/>  -->
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+        <!-- <record model="ir.ui.view" id="orgnizers_form_view">
+            <field name="name">organizer.form</field>
+            <field name="model">organizer</field>
+            <field name="arch" type="xml">
+                <form string="organizer.form">
+                    <sheet>
+                        <group>
+                            <field name="first name"/>
+                            <field name="last name"/>
+                           
+                        </group>
+
+                        <group>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="orgnizer_ids"/>
+                        </group>
+                    </sheet>
+                </form> 
+            </field>
+        </record>   -->
+        <!-- -->
+       
+        <record model="ir.actions.act_window" id="organizer_list">
+            <field name="name">events window</field>
+            <field name="res_model">organizer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="see_orginizer" parent='part_events' name = 'view orginizer' action='organizer_list'/> 
+    </data>
+</odoo>
