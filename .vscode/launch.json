@@ -20,7 +20,6 @@
             "program": "/home/mohammed_almaqdy/odoo_apps/odoo-14.0/odoo-bin",
             "args": [
                 "--config=/home/mohammed_almaqdy/odoo_apps/odoo-14.0/debian/odoo.conf",
-                "-u", "openacadamy"
             ],
             "console": "internalConsole"
         },

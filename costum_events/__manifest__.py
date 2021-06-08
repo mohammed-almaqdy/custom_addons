@@ -20,13 +20,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['event'],
+    'depends': ['base','event'],
 
     'data': [
         'security/ir.model.access.csv',
-        'views/myevents.xml',
+        'views/events.xml',
         'views/organizer.xml',
         'views/materials.xml',
+        'views/partner.xml', 
     ],
     
     'demo': [
