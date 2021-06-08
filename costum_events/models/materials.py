@@ -1,9 +1,9 @@
 from odoo import models, fields, api
-class materials(models.Model):
-    _name='materials'
+class Material(models.Model):
+    _name='materials.materials'
     
-    name=fields.Char(string='name of equepment')
-    department=fields.Char()
+    name=fields.Char(string='Name of Equepment')
+    characterize = fields.Char()
     
     
     

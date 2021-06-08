@@ -1,41 +1,34 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "project1",
+    'name': "costum_events",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    this assigiment for orginize the events and git more information about the orgnizers
+        """,
 
     'description': """
-        Long description of module's purpose
+    in this assigment you can booking for your events or celeberate
+    and chose the orginizers and the equepment for your event easly 
+    just enter in our website and git your wishes things for your 
+    event 
+    have good event
     """,
 
     'author': "Mohammed al-maqdy",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
+    
     'category': 'Uncategorized',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
     'depends': ['event'],
 
-    # always loaded
     'data': [
         'security/ir.model.access.csv',
-        # 'views/views.xml',
-        # 'views/templates.xml',
         'views/myevents.xml',
         'views/organizer.xml',
-        # 'views/my.xml',
         'views/materials.xml',
-
-
-
     ],
-    # only loaded in demonstration mode
+    
     'demo': [
         'demo/demo.xml',
     ],

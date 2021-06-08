@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 from odoo import models, fields, api
-class myevents(models.Model):
-     
+class Myevent(models.Model):
      _inherit = 'event.event'
+     _rec_name = 'myevents'
 
      theme_event = fields.Char(string="Theme Event")
-     event_orgnizer = fields.One2many('organizer','orgnizer_ids',string='event orginizer')
-     material_tab = fields.Many2many('materials',string='material tab')
+     event_orgnizer = fields.One2many('organizer.organizer', 'orgnizer_ids', string='Event Orginizer')
+     material_ids = fields.Many2many('materials.materials',string='Custom Materials')
