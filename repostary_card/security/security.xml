@@ -1,0 +1,19 @@
+<odoo>
+   
+    <record model="ir.module.category" id="module_category_card">
+        <field name="name">Card Permission</field>
+        <field name="sequence">55</field>
+    </record>
+    <record id="requester_group" model="res.groups">
+        <field name="name">Card  Requester</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="category_id" ref="module_category_card"/>
+    </record>
+    <record id="maneger_group" model="res.groups">
+        <field name="name">Card Manager</field>
+        <field name="implied_ids" eval="[(4, ref('repostary_card.requester_group'))]"/>
+        <field name="category_id" ref="module_category_card"/>
+    </record>
+   
+ 
+</odoo>

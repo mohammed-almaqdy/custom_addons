@@ -19,7 +19,8 @@
             "request": "launch",
             "program": "/home/mohammed_almaqdy/odoo_apps/odoo-14.0/odoo-bin",
             "args": [
-                "--config=/home/mohammed_almaqdy/odoo_apps/odoo-14.0/debian/odoo.conf",
+                "--config=/home/mohammed_almaqdy/odoo_apps/odoo-14.0/debian/odoo.conf","-u","repostary_card"
+                
             ],
             "console": "internalConsole"
         },
