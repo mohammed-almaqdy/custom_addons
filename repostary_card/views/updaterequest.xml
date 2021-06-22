@@ -11,9 +11,9 @@
             <field name="request_status"/>
             <field name="request_date"/>
             <field name="request_type"/>
-            <button name="button_pending" string="pending"   class="oe_highlight" type="object" attrs="{'invisible': [('request_status','=', 'value1')]}"/>
-            <button name="button_approved" string="approved"   class="oe_highlight" type="object" attrs="{'invisible': [('request_status','=', 'value2')]}" />
-            <button name="button_rejected" string="rejected"   type="object" attrs="{'invisible': [('request_status','=', 'value3')]}"/>
+            <button name="button_pending" string="pending"   class="oe_highlight" type="object" attrs="{'invisible': [('request_status','=', 'pending')]}"/>
+            <button name="button_approved" string="approved"   class="oe_highlight" type="object" attrs="{'invisible': [('request_status','=', 'approved')]}" />
+            <button name="button_rejected" string="rejected"   type="object" attrs="{'invisible': [('request_status','=', 'rejected')]}"/>
           </tree>
         </field>
       </record>
@@ -24,9 +24,9 @@
       <field name="arch" type="xml">
           <form string="requests form">
             <header>
-              <button name="button_pending" string="pending" request_status="value1"  class="oe_highlight" type="object" />
-              <button name="button_approved" string="approved" request_status="value1"  class="oe_highlight" type="object" />
-              <button name="button_rejected" string="rejected" request_status="value3"  type="object"/>
+              <button name="button_pending" string="pending" request_status="pending"  class="oe_highlight" type="object" />
+              <button name="button_approved" string="approved" request_status="approved"  class="oe_highlight" type="object" />
+              <button name="button_rejected" string="rejected" request_status="rejected"  type="object"/>
               <field name="request_status" widget="statusbar" />
            </header>
               <sheet>

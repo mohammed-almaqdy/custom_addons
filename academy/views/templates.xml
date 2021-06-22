@@ -1,0 +1,15 @@
+<odoo>
+  <template id="biography">
+    <t t-call="website.layout">
+        <t t-set="title">Academy</t>
+        <div class="oe_structure"/>
+        <div class="oe_structure">
+            <div class="container">
+                <h3><t t-esc="person.name"/></h3>
+                <div><t t-esc="person.biography"/></div>
+            </div>
+        </div>
+        <div class="oe_structure"/>
+    </t>
+</template>
+</odoo>

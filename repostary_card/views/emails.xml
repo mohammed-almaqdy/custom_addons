@@ -7,10 +7,9 @@
             <field name="email_from">omer.ali@gmail.com</field>
             <field name="email_to">${(object.email }</field>
             <field name="subject">Email Templete</field>
-            <field name="body_html" type="html">
-                 
+            <field name="body_html">
                 
-            </field>
+                </field>
  
         </record>
 
