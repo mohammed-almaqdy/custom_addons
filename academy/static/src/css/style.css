@@ -1,0 +1,9 @@
+.btn-rounded {
+    transition: all 1s ease;
+}
+
+.btn-rounded:hover {
+    background-color: #00b74a;
+    color: #fff;
+    font-weight: bold;
+}

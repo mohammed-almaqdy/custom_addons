@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="updateR" model="website.menu">
+           <field name="name">Update Requests</field>
+           <field name="url">/card/card/UpdateRequest</field>
+           <field name="parent_id" ref="website.main_menu"/>
+           <field name="sequence" type="int">56</field>
+    </record>
+       <template id="card_info" name="Card Info">
+        <t t-call="website.layout">
+             <div class="container">
+                 <table class="table table-bordered">
+                    
+                     <t t-foreach="lasts" t-as="last">
+                         <tr>
+                          <h6>card number: <t t-esc="last.card_number"/></h6>  
+                            <h6>request number:<t t-esc="last.request_number"/></h6> 
+                            <h6>request status: <t t-esc="last.request_status"/></h6>
+                            <h6>request date: <t t-esc="last.request_date"/></h6>
+                         </tr>
+                     </t>
+                 </table>
+             </div>
+         
+        </t>
+        </template>
+</odoo>

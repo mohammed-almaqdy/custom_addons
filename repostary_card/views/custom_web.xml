@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data>
+       <record id="creates_cards" model="website.menu">
+           <field name="name">card_request</field>
+           <field name="url">/card/card/show</field>
+           <field name="parent_id" ref="website.main_menu"/>
+           <field name="sequence" type="int">55</field>
+       </record>
+
+       <template id="create_reqests" name="Create Request">
+           <t t-call="website.layout">
+               <div id="wrap">
+                   <div class="oe_structure">
+                       <div class="container">
+                        <form role="form" action="/card/card/create" onsubmit="return check()" method="post">
+                        <div class="mb-3">
+                            <label for="InputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="InputEmail1" name="email" t-att-value="email"/>   
+                        </div>
+                        <div class="mb-3">
+                            <label for="mobileinput" class="form-label">mobile</label>
+                            <input type="text" id="mobileinput" class="form-control"  name="mobile" t-att-value="mobile"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fullnames" class="form-label">full name</label>
+                            <input type="text" id="fullnames" class="form-control" name="full_name" t-att-value="full_name" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="card_balances" class="form-label"> card balance</label>
+                            <input type="text" id="card_balances" class="form-control" name="card_balance" t-att-value="card_balance"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="InputNotes" class="form-label">Notes</label>
+                            <input type="text" id="InputNotes" class="form-control"  name="notes" t-att-value="notes"/>
+                        </div>
+                        <div class="clearfix oe_login_button">
+                            <button type="submit" class="btn btn-primary">apprve</button>
+                        </div>
+
+                            </form>
+                    </div>
+                   </div>
+               
+               </div>
+            </t>
+           
+       </template>
+
+        <record id="confirm_page" model="website.menu">
+            <field name="name">thanks</field>
+            <field name="type">qweb</field>
+            <field name="url">/card/card/show</field>
+            <field name="website_published">True</field>
+            <field name="key">repostary_card.requestthank</field>
+            <field name="arch" type="xml">
+                <t name="requestthank" t-name="repostary_card.requestthank">
+                    <t t-call="website.layout">
+                        
+                                <div class="container">
+                                <h1>thanks</h1>
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="alter alter-success" role="status">
+                                            the card has been created successfullly
+                                        </div>
+                                        <p>
+                                            vist ourwebsite any time
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+       
+   </data>
+
+    
+
+</odoo>

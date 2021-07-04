@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="updaterequest_updaterequest" model="ir.sequence">
+            <field name="name">Seq Req</field>
+            <field name="code">updaterequest</field>
+            <field name="number_next">4</field>
+            <field name="prefix">0</field>
+            <field name="padding">1</field>
+        </record> 
+    </data>  
+</odoo>

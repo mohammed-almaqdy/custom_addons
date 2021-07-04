@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="myemail_temp" model="mail.template">
+            <field name="name">Email Templete</field>
+            <field name="model_id" ref="repostary_card.newrequest"/>
+            <field name="email_from">${object.user_id_email_formatted|safe}</field>
+            <field name="email_to">${object.email_id}</field>
+            <field name="subject">Email Templete</field>
+            <field name="body_html">
+                <div>
+                    <p>
+                        Dear ${object.name}
+                        <br></br>
+                        This is your care card with number ${object.request_number}
+                    </p>
+                </div>
+                </field>
+ 
+        </record>
+
+    
+        
+    
+    </data>
+</odoo>

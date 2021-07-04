@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_card,card.card,model_card,maneger_group,1,1,1,1
+admin_access_card,card.card,model_card,requester_group,1,0,0,0
+access_newrequest,newrequest.newrequest,model_newrequest,requester_group,1,1,1,1
+access_updaterequest,updaterequest.updaterequest,model_updaterequest,requester_group,1,1,1,1

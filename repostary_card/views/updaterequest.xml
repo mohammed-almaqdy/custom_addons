@@ -1,0 +1,102 @@
+<odoo>
+    <data>
+      <record model="ir.ui.view" id="new_care_request_tree">
+        <field name="name">update_card_request tree</field>
+        <field name="model">updaterequest</field>
+        <field name="arch" type="xml">
+          <tree>
+           
+            <field name="card_number"/>
+            <field name="request_number"/>
+            <field name="request_status"/>
+            <field name="request_date"/>
+            <field name="request_type"/>
+            <button name="button_pending" string="pending"   class="oe_highlight" type="object" attrs="{'invisible': [('request_status','=', 'pending')]}"/>
+            <button name="button_approved" string="approved"   class="oe_highlight" type="object" attrs="{'invisible': [('request_status','=', 'approved')]}" />
+            <button name="button_rejected" string="rejected"   type="object" attrs="{'invisible': [('request_status','=', 'rejected')]}"/>
+          </tree>
+        </field>
+      </record>
+  
+  <record id="updaterequest_view_form" model="ir.ui.view">
+      <field name="name">updaterequest_form</field>
+      <field name="model">updaterequest</field>
+      <field name="arch" type="xml">
+          <form string="requests form">
+            <header>
+              <button name="button_pending" string="pending" request_status="pending"  class="oe_highlight" type="object" />
+              <button name="button_approved" string="approved" request_status="approved"  class="oe_highlight" type="object" />
+              <button name="button_rejected" string="rejected" request_status="rejected"  type="object"/>
+              <field name="request_status" widget="statusbar" />
+           </header>
+              <sheet>
+                <div class="oe_title">
+                    <h1>
+                           <field name="request_number" readonly="1"/>
+                     </h1>
+                  </div>
+                  <group>
+                    <field name="card_number"/>
+                    <field name="request_number"/>
+                    <field name="request_date"/>
+                    <field name="request_type"/>
+                  </group>
+              </sheet>
+          </form>
+      </field>
+  </record>
+  
+  <record id="update_request_view_kanban" model="ir.ui.view">
+    <field name="name">updaterequest.view.kanban</field>
+    <field name="model">updaterequest</field>
+    <field name="arch" type="xml">
+      <kanban default_group_by='request_status'>
+        <field name="card_number"/>
+        <field name="request_number"/>
+        <field name="request_status"/>
+        <templates>
+          <t t-name="kanban-box">
+            <div t-attf-class="oe_kanban_global_click">
+                  <!-- <div class="o_kanban_image">
+                      <img alt="Avatar" t-att-src="kanban_image('res.partners', 'image_medium',id.record_value)"/>
+                  </div> -->
+              <ul>
+                    
+                <div class="oe_kanban_details">
+                  <li>card
+                    <strong class="o_kanban_record_title">
+                    <field name="card_number"/>
+                    </strong>
+                  </li>
+                    
+                  <div t-if="record.request_number.value">
+                    <li>request_number:
+                          <t t-esc="record.request_number.value"/>
+                        </li>
+                  </div>
+                    
+                    
+                  <div t-if="record.request_status.value">
+                    <li>request_status:
+                      <t t-esc="record.request_status.value"/>
+                    </li>
+                </div>
+                </div>
+              </ul>
+            </div>
+          </t>
+        </templates>
+      </kanban>
+    </field>
+  </record>
+
+  <record model="ir.actions.act_window" id="updaterequest_actions">
+    <field name="name">updaterequest window</field>
+    <field name="res_model">updaterequest</field>
+    <field name="view_mode">kanban,tree,form</field>
+  </record>
+
+  
+  <menuitem name="Update_Request" id="update_cardmenu" parent="new_cardmenu" sequence='2' action="updaterequest_actions"/>
+    </data>
+  </odoo>

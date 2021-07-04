@@ -1,0 +1,33 @@
+<odoo> 
+<record id="materials_view_tree" model="ir.ui.view">
+      <field name="name">materials.view.tree</field>
+      <field name="model">materials</field>
+      <field name="arch" type="xml">
+            <tree>
+                  <field name="name"/>
+                  <field name="type"  widget="radio"/> 
+            </tree>
+      </field>
+</record>
+<!-- model.name form view -->
+<record id="materials_view_form" model="ir.ui.view">
+      <field name="name">materials.view.form</field>
+      <field name="model">materials</field>
+      <field name="arch" type="xml">
+            <form string="">
+                  <sheet>
+                        <group >
+                              <field name="name"/>
+                              <field name="type"  widget="radio"/>  
+                        </group>
+                  </sheet>
+            </form>
+      </field>
+</record>
+<record model="ir.actions.act_window" id="materials_list">
+      <field name="name">materials window</field>
+      <field name="res_model">materials</field>
+      <field name="view_mode">tree,form</field>
+  </record>
+  <menuitem id="see_material" parent='part_events' name = 'event materials' action='materials_list'/> 
+</odoo>

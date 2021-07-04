@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_info" name="Link to frontend portal" inherit_id="portal.user_dropdown">
+        <xpath expr="//*[@id='o_logout_divider']" position="before">
+            <a href="/card/card/showinfo" role="menuitem" class="dropdown-item">show info</a>
+        </xpath>
+    </template>
+       <template id="card_info" name="Card Info">
+           <t t-call="website.layout">
+                <div class="container">
+                    <table class="table table-bordered">
+                       
+                        <t t-foreach="show" t-as="shows">
+                            <tr>
+                             <h6>full name: <t t-esc="shows.full_name"/></h6>  
+                               <h6>mobile:<t t-esc="shows.mobile"/></h6> 
+                               <h6>email: <t t-esc="shows.email"/></h6>
+                                <a href="/card/card/UpdateRequest" class="btn btn-primary">update card request</a>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+            
+           </t>
+       </template>
+
+</odoo>
